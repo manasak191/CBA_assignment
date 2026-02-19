@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dynamic Background Color</title>
+    <style>
+      #myBox {
+        padding: 20px;
+        text-align: center;
+        border: 1px solid #000;
+        width: 200px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="myBox">Watch me change!</div>
+    <button onclick="changeColor()">Change Color</button>
+    <script>
+      function changeColor() {
+        let colors=["red","green","blue","orange","purple","yellow","pink"];
+        let randomIndex=Math.floor(Math.random()*colors.length);
+        document.getElementById("myBox").style.backgroundColor=colors[randomIndex];
+      }
+    </script>
+  </body>
+</html>

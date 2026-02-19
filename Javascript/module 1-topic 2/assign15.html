@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+let data = [0, "", false, null, undefined, NaN];
+
+for (let i = 0; i < data.length; i++) {
+  if (data[i]) {
+    console.log("Truthy");
+  } else {
+    console.log("Falsy");
+  }
+}
+</script>
+</body>
+</html>

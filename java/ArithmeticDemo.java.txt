@@ -1,0 +1,22 @@
+// ArithmeticDemo.java
+public class ArithmeticDemo {
+    public static void main(String[] args) {
+
+
+        double num1 = 25.5;
+        double num2 = 7.3;
+
+        System.out.println("Numbers: " + num1 + ", " + num2);
+
+
+        System.out.println("Addition: " + (num1 + num2));
+        System.out.println("Subtraction: " + (num1 - num2));
+        System.out.println("Multiplication: " + (num1 * num2));
+        System.out.println("Division: " + (num1 / num2));
+
+
+        int intNum1 = 25;
+        int intNum2 = 7;
+        System.out.println("Modulus (" + intNum1 + " % " + intNum2 + "): " + (intNum1 % intNum2));
+    }
+}

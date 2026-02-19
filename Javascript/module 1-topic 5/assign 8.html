@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shadowing</title>
+</head>
+<body>
+
+<h2>Variable Shadowing</h2>
+
+<script>
+  let value = 50
+
+  function testShadow() {
+    let value = 100
+    console.log("Inside: " + value + "<br>")
+  }
+
+  testShadow()
+  console.log("Outside: " + value)
+</script>
+
+</body>
+</html>

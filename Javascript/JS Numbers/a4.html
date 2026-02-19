@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>Prime Number</title></head>
+<body>
+<script>
+let num = 11;
+let isPrime = num > 1;
+for (let i = 2; i <= Math.sqrt(num); i++) {
+  if (num % i === 0) isPrime = false;
+}
+console.log(isPrime);
+</script>
+</body>
+</html>

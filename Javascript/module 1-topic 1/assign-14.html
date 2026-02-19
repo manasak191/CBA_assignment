@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2 id="count">0</h2>
+    <button onclick="increment()">+</button>
+    <button onclick="decrement()">-</button>
+    <script>
+      var c = 0;
+      function increment() {
+        c++;
+        document.getElementById("count").innerText = c;
+      }
+      function decrement() {
+        c--;
+        document.getElementById("count").innerText = c;
+      }
+    </script>
+  </body>
+</html>

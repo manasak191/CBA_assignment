@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input id="data" placeholder="Enter something">
+<button onclick="check()">Check</button>
+<p id="result"></p>
+
+<script>
+function check() {
+  let x = document.getElementById("data").value;
+
+  document.getElementById("result").innerHTML =
+    typeof x + "<br>" +
+    Number(x) + "<br>" +
+    Boolean(x);
+}
+</script>
+
+</body>
+</html>

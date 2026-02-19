@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input id="v" placeholder="Enter value">
+<button onclick="convert()">Convert</button>
+<p id="out"></p>
+
+<script>
+function convert() {
+  let x = document.getElementById("v").value;
+
+  document.getElementById("out").innerHTML =
+    "Type: " + typeof x + "<br>" +
+    "String: " + String(x) + "<br>" +
+    "Number: " + Number(x) + "<br>" +
+    "Boolean: " + Boolean(x);
+}
+</script>
+
+</body>
+</html>

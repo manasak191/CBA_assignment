@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><title>Count Vowels</title></head>
+<body>
+<script>
+function countVowels(str) {
+  let count = 0;
+  for (let ch of str.toLowerCase()) {
+    if ("aeiou".includes(ch)) count++;
+  }
+  return count;
+}
+console.log(countVowels("JavaScript"));
+</script>
+</body>
+</html>

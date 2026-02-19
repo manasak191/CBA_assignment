@@ -1,0 +1,13 @@
+package jan23;
+import java.util.List;
+public class ListExample{
+	public static void main(String[]  args){
+		List<string> cities=new ArrayList<>();
+cities.add("Mumbai");
+cities.add("Bengaluru");
+cities.add("Hyderabad");
+cities.add("noida");
+system.out.println(cities);
+
+for(String city:cities)
+System.out.println(city);

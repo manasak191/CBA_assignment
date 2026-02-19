@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Job Application</title>
+  <style>
+    span { color: red; font-size: 13px; }
+  </style>
+</head>
+<body>
+
+<h2>Online Job Application Form</h2>
+
+<form>
+  <label>Applicant Name</label><br>
+  <input type="text" pattern="[A-Za-z ]+" required>
+  <span>Only alphabets and spaces</span><br><br>
+
+  <label>Email ID</label><br>
+  <input type="email"
+         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+         required><br><br>
+
+  <label>Password</label><br>
+  <input type="password"
+         pattern="(?=.*[A-Z])(?=.*[0-9]).{6,}"
+         required>
+  <span>1 uppercase, 1 digit, min 6 chars</span><br><br>
+
+  <label>Mobile Number</label><br>
+  <input type="text" pattern="[6-9][0-9]{9}" required><br><br>
+
+  <label>Experience (Years)</label><br>
+  <input type="text" pattern="[0-9]+" required>
+  <span>Numbers only</span><br><br>
+
+  <label>Job Role</label><br>
+  <select required>
+    <option value="">Select Role</option>
+    <option>Developer</option>
+    <option>Tester</option>
+    <option>Analyst</option>
+  </select><br><br>
+
+  <label>Skills</label><br>
+  <input type="checkbox" required> Java
+  <input type="checkbox"> Python
+  <input type="checkbox"> SQL
+  <br><br>
+
+  <label>Preferred Location</label><br>
+  <select multiple required>
+    <option>Bangalore</option>
+    <option>Chennai</option>
+    <option>Hyderabad</option>
+    <option>Pune</option>
+  </select><br><br>
+
+  <button type="submit">Apply</button>
+</form>
+
+</body>
+</html>

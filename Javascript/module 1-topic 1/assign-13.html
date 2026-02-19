@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <body onload="setBackground()">
+    <p>Check the background color!</p>
+    <script>
+      function setBackground() {
+        var h = new Date().getHours();
+        if (h < 12) {
+          document.body.style.backgroundColor = "lightyellow";
+          document.body.style.color = "black";
+        } else {
+          document.body.style.backgroundColor = "darkgray";
+          document.body.style.color = "white";
+        }
+      }
+    </script>
+  </body>
+</html>

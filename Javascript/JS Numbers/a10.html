@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><title>Armstrong Number</title></head>
+<body>
+<script>
+let num = 153;
+let sum = 0;
+let temp = num;
+let digits = num.toString().length;
+while (temp > 0) {
+  let digit = temp % 10;
+  sum += Math.pow(digit, digits);
+  temp = Math.floor(temp / 10);
+}
+console.log(sum === num);
+</script>
+</body>
+</html>

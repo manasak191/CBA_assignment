@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Course Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+        }
+
+        .container {
+            width: 320px;      /* Reduced width */
+            margin: 30px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 6px;
+            margin-top: 5px;
+        }
+
+        .inline {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .error {
+            color: red;
+            font-size: 13px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: rgb(41, 41, 169);
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+<form onsubmit="return validateForm()">
+
+    <h2>Student Registration</h2>
+
+    <!-- Student Name -->
+    <label>Student Name</label>
+    <input type="text" id="name">
+    <span id="nameError" class="error"></span>
+
+    <!-- Email -->
+    <label>Email</label>
+    <input type="email" id="email">
+    <span id="emailError" class="error"></span>
+
+    <!-- Roll Number -->
+    <label>Roll Number</label>
+    <input type="text" id="roll" placeholder="STU-1234">
+    <span id="rollError" class="error"></span>
+
+    <!-- Mobile -->
+    <label>Mobile Number</label>
+    <input type="text" id="mobile">
+    <span id="mobileError" class="error"></span>
+
+    <!-- DOB -->
+    <label>Date of Birth</label>
+    <input type="text" id="dob" placeholder="DD-MM-YYYY">
+    <span id="dobError" class="error"></span>
+
+    <!-- Gender -->
+    <label>Gender</label><br>
+    <input type="radio" name="gender" class="inline"> Male
+    <input type="radio" name="gender" class="inline"> Female
+    <input type="radio" name="gender" class="inline"> Other
+    <span id="genderError" class="error"></span>
+
+    <!-- Courses -->
+    <label>Courses</label><br>
+    <input type="checkbox" name="course" class="inline"> Java
+    <input type="checkbox" name="course" class="inline"> Python
+    <input type="checkbox" name="course" class="inline"> Web Development
+    <span id="courseError" class="error"></span>
+
+    <!-- Course Mode -->
+    <label>Course Mode</label>
+    <select id="mode">
+        <option value="">--Select Mode--</option>
+        <option>Online</option>
+        <option>Offline</option>
+        <option>Hybrid</option>
+    </select>
+    <span id="modeError" class="error"></span>
+
+    <button type="submit">Register</button>
+
+</form>
+</div>
+
+<script>
+function validateForm() {
+
+    let valid = true;
+
+    // Clear previous errors
+    document.querySelectorAll(".error").forEach(e => e.innerHTML = "");
+
+    // Name
+    let name = document.getElementById("name").value.trim();
+    if (!/^[A-Za-z ]{3,}$/.test(name)) {
+        document.getElementById("nameError").innerHTML =
+            "Minimum 3 characters, alphabets only";
+        valid = false;
+    }
+
+    // Email
+    let email = document.getElementById("email").value.trim();
+    if (!/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(email)) {
+        document.getElementById("emailError").innerHTML =
+            "Enter valid email";
+        valid = false;
+    }
+
+    // Roll
+    let roll = document.getElementById("roll").value.trim();
+    if (!/^STU-\d{4}$/.test(roll)) {
+        document.getElementById("rollError").innerHTML =
+            "Format: STU-1234";
+        valid = false;
+    }
+
+    // Mobile
+    let mobile = document.getElementById("mobile").value.trim();
+    if (!/^[6-9]\d{9}$/.test(mobile)) {
+        document.getElementById("mobileError").innerHTML =
+            "Enter 10-digit Indian number";
+        valid = false;
+    }
+
+    // DOB
+    let dob = document.getElementById("dob").value.trim();
+    if (!/^(0[1-9]|[12][0-9]|3[01])-(0[1-9]|1[012])-\d{4}$/.test(dob)) {
+        document.getElementById("dobError").innerHTML =
+            "Use DD-MM-YYYY format";
+        valid = false;
+    }
+
+    // Gender
+    if (!document.querySelector('input[name="gender"]:checked')) {
+        document.getElementById("genderError").innerHTML =
+            "Select gender";
+        valid = false;
+    }
+
+    // Courses
+    if (document.querySelectorAll('input[name="course"]:checked').length === 0) {
+        document.getElementById("courseError").innerHTML =
+            "Select at least one course";
+        valid = false;
+    }
+
+    // Course Mode
+    if (document.getElementById("mode").value === "") {
+        document.getElementById("modeError").innerHTML =
+            "Select course mode";
+        valid = false;
+    }
+
+    return valid;
+}
+</script>
+
+</body>
+</html>

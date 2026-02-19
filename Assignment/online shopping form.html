@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkout Form</title>
+  <style>
+    span { color: red; font-size: 13px; }
+  </style>
+</head>
+<body>
+
+<h2>Checkout & Delivery Form</h2>
+
+<form>
+  <label>Customer Name</label><br>
+  <input type="text" pattern="[A-Za-z ]+" required>
+  <span>Only alphabets and spaces</span><br><br>
+
+  <label>Email</label><br>
+  <input type="email"
+         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+         required>
+  <span>Invalid email format</span><br><br>
+
+  <label>Mobile Number</label><br>
+  <input type="text" pattern="[6-9][0-9]{9}" required>
+  <span>10-digit Indian number</span><br><br>
+
+  <label>PIN Code</label><br>
+  <input type="text" pattern="[0-9]{6}" required>
+  <span>6-digit PIN code</span><br><br>
+
+  <label>Address</label><br>
+  <textarea minlength="10" required></textarea>
+  <span>Minimum 10 characters</span><br><br>
+
+  <label>Payment Mode</label><br>
+  <input type="radio" name="pay" required> Card
+  <input type="radio" name="pay"> UPI
+  <input type="radio" name="pay"> COD
+  <br><br>
+
+  <label>Delivery Slot</label><br>
+  <select required>
+    <option value="">Select Slot</option>
+    <option>Morning</option>
+    <option>Afternoon</option>
+    <option>Evening</option>
+  </select><br><br>
+
+  <input type="checkbox" required> Accept Terms & Conditions<br><br>
+
+  <button type="submit">Place Order</button>
+</form>
+
+</body>
+</html>

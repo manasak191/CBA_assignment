@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <input id="name" placeholder="Enter your name">
+    <button onclick="showWelcome()">Submit</button>
+    <p id="output"></p>
+    <script>
+      function showWelcome() {
+        var n = document.getElementById("name").value;
+        document.getElementById("output").innerText = "Welcome, " + n + "!";
+      }
+    </script>
+  </body>
+</html>
